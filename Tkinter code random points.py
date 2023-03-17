@@ -36,7 +36,7 @@ class Player:
         self.team_color = team_color
         self.x = random.randint(0, BASKETBALL_FIELD_WIDTH)
         self.y = random.randint(0, BASKETBALL_FIELD_HEIGHT)
-        self.radius = 10
+        self.radius = 15
         self.speed = 2
         self.dx = random.uniform(-self.speed, self.speed)
         self.dy = random.uniform(-self.speed, self.speed)
