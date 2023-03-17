@@ -16,8 +16,8 @@ NUM_PLAYERS_PER_TEAM = 5
 TEAM_COLORS = ["blue", "red"]
 
 #player names
-PLAYER_NAMES = ["James", "Smith", "Johnson", "Williams", "Jones",
-"Brown", "Miller", "Davis", "Garcia", "Rodriguez"]
+PLAYER_NAMES = ["Mikael", "Carlos Antonio", "Titouan", "Thomas", "Elise",
+"Alois", "Marie", "Enora", "Arrel", "Eva"]
 
 # Create a list to store the player objects
 players = []
