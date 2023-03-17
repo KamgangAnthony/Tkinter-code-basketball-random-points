@@ -15,6 +15,10 @@ NUM_PLAYERS_PER_TEAM = 5
 # Define the colors of the two teams
 TEAM_COLORS = ["blue", "red"]
 
+#player names
+PLAYER_NAMES = ["James", "Smith", "Johnson", "Williams", "Jones",
+"Brown", "Miller", "Davis", "Garcia", "Rodriguez"]
+
 # Create a list to store the player objects
 players = []
 
@@ -31,9 +35,10 @@ canvas.pack()
 
 # Define the Player class
 class Player:
-    def __init__(self, canvas, team_color):
+    def __init__(self, canvas, team_color, player_name):
         self.canvas = canvas
         self.team_color = team_color
+        self.player_name = player_name
         self.x = random.randint(0, BASKETBALL_FIELD_WIDTH)
         self.y = random.randint(0, BASKETBALL_FIELD_HEIGHT)
         self.radius = 15
@@ -43,6 +48,8 @@ class Player:
         self.object = canvas.create_oval(self.x-self.radius, self.y-self.radius,
                                          self.x+self.radius, self.y+self.radius,
                                          fill=team_color)
+        self.text_object = canvas.create_text(self.x, self.y - 20, text=self.player_name,
+                                              fill="white", font=("Arial", 12))
 
     def move(self):
         # Move the player
@@ -57,11 +64,13 @@ class Player:
 
         # Update the position of the player on the canvas
         self.canvas.move(self.object, self.dx, self.dy)
+        self.canvas.move(self.text_object, self.dx, self.dy)
 
 # Create the player objects and add them to the players list
 for i in range(NUM_PLAYERS_PER_TEAM * 2):
     team_color = TEAM_COLORS[i // NUM_PLAYERS_PER_TEAM]
-    player = Player(canvas, team_color)
+    player_name = PLAYER_NAMES[i % NUM_PLAYERS_PER_TEAM]
+    player = Player(canvas, team_color, player_name)
     players.append(player)
 
 # Define the update function for the animation
