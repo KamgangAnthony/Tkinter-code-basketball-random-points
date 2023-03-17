@@ -2,12 +2,12 @@ import tkinter as tk
 import random
 
 # Define the size of the simulation area
-WIDTH = 940
-HEIGHT = 500
+WIDTH = 1400
+HEIGHT = 750
 
 # Define the size of the basketball field
-BASKETBALL_FIELD_WIDTH = 940
-BASKETBALL_FIELD_HEIGHT = 500
+BASKETBALL_FIELD_WIDTH = 698
+BASKETBALL_FIELD_HEIGHT = 378
 
 # Define the number of players per team
 NUM_PLAYERS_PER_TEAM = 5
@@ -17,6 +17,17 @@ TEAM_COLORS = ["blue", "red"]
 
 # Create a list to store the player objects
 players = []
+
+# Create the Tkinter window and canvas
+root = tk.Tk()
+root.title("Basketball Players Simulation")
+canvas = tk.Canvas(root, width=WIDTH, height=HEIGHT)
+
+# Load the background image
+bg_img = tk.PhotoImage(file="basketball_court (1).png")
+canvas.create_image(0, 0, anchor=tk.NW, image=bg_img)
+
+canvas.pack()
 
 # Define the Player class
 class Player:
@@ -46,12 +57,6 @@ class Player:
 
         # Update the position of the player on the canvas
         self.canvas.move(self.object, self.dx, self.dy)
-
-# Create the Tkinter window and canvas
-root = tk.Tk()
-root.title("Basketball Players Simulation")
-canvas = tk.Canvas(root, width=WIDTH, height=HEIGHT, bg="white")
-canvas.pack()
 
 # Create the player objects and add them to the players list
 for i in range(NUM_PLAYERS_PER_TEAM * 2):
