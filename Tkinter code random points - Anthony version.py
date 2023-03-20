@@ -20,7 +20,7 @@ TEAM_COLORS = ["blue", "red"]
 #player names
 PLAYER_NAMES = ["Mikael", "Carlos Antonio", "Titouan", "Thomas", "Elisa",
 "Alois", "Marie", "Enora", "Arrel", "Eva"]
-
+# Create a list to store the player objects
 # Create a list to store the player objects
 players = []
 
